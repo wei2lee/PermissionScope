@@ -997,6 +997,7 @@ typealias resultsForConfigClosure     = ([PermissionResult]) -> Void
      - returns: Permission status for the requested type.
      */
     public func statusSpeech() -> PermissionStatus {
+        guard #available(iOS 10.0, *) else { return .unknown }
         let speechPermission = SFSpeechRecognizer.authorizationStatus()
         switch speechPermission {
         case .denied:
@@ -1012,6 +1013,7 @@ typealias resultsForConfigClosure     = ([PermissionResult]) -> Void
      Requests access to the ASR, if necessary.
      */
     public func requestSpeech() {
+        guard #available(iOS 10.0, *) else { return }
         let status = statusSpeech()
         switch status {
         case .unknown:
