@@ -7,15 +7,7 @@
 //
 
 import Foundation
-import CoreLocation
-import AddressBook
 import AVFoundation
-import Photos
-import EventKit
-import CoreBluetooth
-import CoreMotion
-import CloudKit
-import Accounts
 import Speech
 
 /**
