@@ -528,9 +528,6 @@ typealias resultsForConfigClosure     = ([PermissionResult]) -> Void
                 self.view.removeFromSuperview()
             })
         })
-        
-        notificationTimer?.invalidate()
-        notificationTimer = nil
     }
     
     // MARK: - Delegates
@@ -650,7 +647,7 @@ typealias resultsForConfigClosure     = ([PermissionResult]) -> Void
     */
     func statusForPermission(_ type: PermissionType, completion: statusRequestClosure) {
         // Get permission status
-        let permissionStatus: PermissionStatus
+        var permissionStatus: PermissionStatus = .unknown
         switch type {
         case .microphone:
             permissionStatus = statusMicrophone()
